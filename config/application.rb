@@ -158,5 +158,11 @@ module Greenlight
 
     # Default admin password
     config.admin_password_default = ENV['ADMIN_PASSWORD'] || 'administrator'
+
+    # BigBlueButton maximum participants for rooms
+    config.bigbluebutton_max_participants = ENV['BIGBLUEBUTTON_MAX_PARTICIPANTS'].present? ? ENV['BIGBLUEBUTTON_MAX_PARTICIPANTS'].to_i : false
+
+    # BigBlueButton maximum participants for rooms
+    config.bigbluebutton_duration = ENV['BIGBLUEBUTTON_DURATION'].present? ? ENV['BIGBLUEBUTTON_DURATION'].to_i : false
   end
 end

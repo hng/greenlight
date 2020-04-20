@@ -76,6 +76,10 @@ module BbbServer
 
     create_options[:guestPolicy] = "ASK_MODERATOR" if options[:require_moderator_approval]
 
+    create_options[:maxParticipants] = Rails.configuration.bigbluebutton_max_participants if Rails.configuration.bigbluebutton_max_participants
+
+    create_options[:duration] = Rails.configuration.bigbluebutton_duration if Rails.configuration.bigbluebutton_duration
+
     # Send the create request.
     begin
       meeting = bbb_server.create_meeting(room.name, room.bbb_id, create_options)
