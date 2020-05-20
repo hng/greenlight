@@ -128,6 +128,9 @@ module Greenlight
     config.report_issue_url = ENV["REPORT_ISSUE_URL"]
     config.help_url = ENV["HELP_URL"].presence || "https://docs.bigbluebutton.org/greenlight/gl-overview.html"
 
+    # Enable download link for recordings (provided by bbb-download)
+    config.enable_bbb_download_link = ENV["ENABLE_BBB_DOWNLOAD_LINK"].presence || false 
+
     # DEFAULTS
 
     # Default branding image if the user does not specify one

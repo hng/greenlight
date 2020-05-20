@@ -67,6 +67,10 @@
     <% sorted_formats.each do |p| %>
       <%= link_to t("recording.format.#{p[:type]}"), p[:url], class: "btn btn-sm btn-primary", target: "_blank" %>
     <% end %>
+    <% if Rails.configuration.enable_bbb_download_link %>
+      <% bbb_base_url = URI.parse(Rails.configuration.bigbluebutton_endpoint) %>
+      <%= link_to "Download", "#{bbb_base_url.scheme}://#{bbb_base_url.host}/download/presentation/#{recording[:recordID]}/#{recording[:recordID]}.mp4", class: "btn btn-sm btn-secondary", target: "_blank" %>
+    <% end %>
   </td>
   <td class="text-center">
     <div class="item-action dropdown">
