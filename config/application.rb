@@ -129,7 +129,7 @@ module Greenlight
     config.help_url = ENV["HELP_URL"].presence || "https://docs.bigbluebutton.org/greenlight/gl-overview.html"
 
     # Enable download link for recordings (provided by bbb-download)
-    config.enable_bbb_download_link = ENV["ENABLE_BBB_DOWNLOAD_LINK"].presence || false 
+    config.bbb_download_url = ENV["BBB_DOWNLOAD_URL"].presence || false 
 
     # DEFAULTS
 
